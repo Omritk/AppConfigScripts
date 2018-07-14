@@ -5,8 +5,8 @@ sudo apt-get update
 sudo DEBIAN_FRONTEND=noninteractive apt-get -yq install openvas
 #sudo openvas-setup
 sudo openvas-start
-sudo openvasmd --rebuild
-sudo openvasmd --user=admin --new-password=csadmin
+#sudo openvasmd --rebuild
+#sudo openvasmd --user=admin --new-password=csadmin
 sudo /sbin/sysctl -w kernel.shmmax=134217728
 sudo chown ec2-user /etc/sysctl.conf
 sudo echo "kernel.shmmax = 134217729" >> /etc/sysctl.conf
