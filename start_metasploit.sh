@@ -7,13 +7,19 @@
 #sudo openvas-start
 #sudo openvasmd --rebuild
 #sudo openvasmd --user=admin --new-password=csadmin
+
+#Metasploit related config
 sudo /sbin/sysctl -w kernel.shmmax=134217728
 sudo chown ec2-user /etc/sysctl.conf
 sudo echo "kernel.shmmax = 134217729" >> /etc/sysctl.conf
 sudo update-rc.d postgresql enable
 sudo service postgresql start
 sudo msfdb init
-sudo echo 'ec2-user:quali123' | chpasswd
+
+#Enabligh SSH connection using password
+sudo wget https://raw.githubusercontent.com/qualidan/AppConfigScripts/master/ec2-user_chpasswd.sh
+sudo chmod +x ec2-user_chpasswd.sh
+sudo ./ec2-user_chpasswd.sh
 sudo cd /etc/ssh
 sudo wget https://raw.githubusercontent.com/qualidan/AppConfigScripts/master/ec2_sshd_config
 sudo mv sshd_config sshd_config.bkp
