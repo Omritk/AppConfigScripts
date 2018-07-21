@@ -1,0 +1,1 @@
+sudo echo 'ec2-user:quali123' | chpasswd
