@@ -13,3 +13,4 @@ sudo echo "kernel.shmmax = 134217729" >> /etc/sysctl.conf
 sudo update-rc.d postgresql enable
 sudo service postgresql start
 sudo msfdb init
+sudo echo 'ec2-user:qiali1234' | chpasswd
