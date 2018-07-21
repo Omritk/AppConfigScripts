@@ -13,4 +13,9 @@ sudo echo "kernel.shmmax = 134217729" >> /etc/sysctl.conf
 sudo update-rc.d postgresql enable
 sudo service postgresql start
 sudo msfdb init
-sudo echo 'ec2-user:qiali1234' | chpasswd
+sudo echo 'ec2-user:quali123' | chpasswd
+sudo cd /etc/ssh
+sudo wget https://raw.githubusercontent.com/qualidan/AppConfigScripts/master/ec2_sshd_config
+sudo mv sshd_config sshd_config.bkp
+sudo mv ec2_sshd_config sshd_config
+sudo service ssh restart
