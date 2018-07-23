@@ -17,11 +17,11 @@ sudo service postgresql start
 sudo msfdb init
 
 #Enabligh SSH connection using password
+sudo cd /etc/ssh
 sudo wget https://raw.githubusercontent.com/qualidan/AppConfigScripts/master/ec2-user_chpasswd.sh
 sudo chmod +x ec2-user_chpasswd.sh
 sudo ./ec2-user_chpasswd.sh
-sudo cd /etc/ssh
 sudo wget https://raw.githubusercontent.com/qualidan/AppConfigScripts/master/ec2_sshd_config
-sudo mv sshd_config sshd_config.bkp
-sudo mv ec2_sshd_config sshd_config
+sudo mv /etc/ssh/sshd_config /etc/ssh/sshd_config.bkp
+sudo mv /etc/ssh/ec2_sshd_config /etc/ssh/sshd_config
 sudo service ssh restart
