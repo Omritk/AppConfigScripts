@@ -23,5 +23,5 @@ sudo chmod +x ec2-user_chpasswd.sh
 sudo ./ec2-user_chpasswd.sh
 sudo wget https://raw.githubusercontent.com/qualidan/AppConfigScripts/master/ec2_sshd_config
 sudo mv /etc/ssh/sshd_config /etc/ssh/sshd_config.bkp
-sudo mv /etc/ssh/ec2_sshd_config /etc/ssh/sshd_config
+sudo mv ./ec2_sshd_config /etc/ssh/sshd_config
 sudo service ssh restart
